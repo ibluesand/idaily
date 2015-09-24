@@ -7,15 +7,34 @@
 //
 
 import UIKit
+import Alamofire
+
+let launchImageUrl = "http://news-at.zhihu.com/api/4/start-image/720*1184"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var testNavigationController: UINavigationController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        testNavigationController = UINavigationController()
+    
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window!.backgroundColor = UIColor.blueColor()
+        self.window!.makeKeyAndVisible()
+        
+        let image = UIImage()
+        
+        self.window!.rootViewController =
+        LaunchImageViewController.addTransitionToViewController(testNavigationController!, modalTransitionStyle: UIModalTransitionStyle.CrossDissolve, withImageDate: image, withSourceName: "hello")
+
+        loadStartImage(launchImageUrl);
+        
+
         return true
     }
 
@@ -39,6 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    func loadStartImage(url:String) {
+        Alamofire.request(.GET, launchImageUrl).responseJSON() {
+                (request, response, data) in
+            print(data.value)
+        }
     }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481FB51D1BB3F5B300E97154 /* LaunchImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481FB51C1BB3F5B300E97154 /* LaunchImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		48A99A041BAD316300EF8CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A99A031BAD316300EF8CAD /* AppDelegate.swift */; };
 		48A99A061BAD316300EF8CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A99A051BAD316300EF8CAD /* ViewController.swift */; };
 		48A99A091BAD316300EF8CAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A99A071BAD316300EF8CAD /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		055FD8EDEA3E8CD9F92DC1E0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		481FB51C1BB3F5B300E97154 /* LaunchImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchImageViewController.swift; sourceTree = "<group>"; };
 		48A99A001BAD316300EF8CAD /* idaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A99A031BAD316300EF8CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A99A051BAD316300EF8CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		481FB51E1BB41D0400E97154 /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		4830D2011BB2A92500964D05 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				481FB51C1BB3F5B300E97154 /* LaunchImageViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		48A999F71BAD316300EF8CAD = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +129,8 @@
 		48A99A021BAD316300EF8CAD /* idaily */ = {
 			isa = PBXGroup;
 			children = (
+				481FB51E1BB41D0400E97154 /* common */,
+				4830D2011BB2A92500964D05 /* controller */,
 				48A99A031BAD316300EF8CAD /* AppDelegate.swift */,
 				48A99A051BAD316300EF8CAD /* ViewController.swift */,
 				48A99A071BAD316300EF8CAD /* Main.storyboard */,
@@ -331,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A99A061BAD316300EF8CAD /* ViewController.swift in Sources */,
+				481FB51D1BB3F5B300E97154 /* LaunchImageViewController.swift in Sources */,
 				48A99A041BAD316300EF8CAD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
