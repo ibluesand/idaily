@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 let launchImageUrl = "http://news-at.zhihu.com/api/4/start-image/720*1184"
 
@@ -63,8 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func loadStartImage(url:String) {
         Alamofire.request(.GET, launchImageUrl).responseJSON() {
-                (request, response, data) in
-            print(data.value)
+                (request, response, result) in
+                var json  = JSON(result.value!)
+                let img = json["img"]
+                print(img)
         }
     }
 
