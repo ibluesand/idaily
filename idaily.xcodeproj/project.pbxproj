@@ -38,6 +38,7 @@
 /* Begin PBXFileReference section */
 		055FD8EDEA3E8CD9F92DC1E0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		481FB51C1BB3F5B300E97154 /* LaunchImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchImageViewController.swift; sourceTree = "<group>"; };
+		4870C0C71BC7E5FE00EEDBF9 /* idaily-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "idaily-Bridging-Header.h"; sourceTree = "<group>"; };
 		48A99A001BAD316300EF8CAD /* idaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A99A031BAD316300EF8CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A99A051BAD316300EF8CAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 				48A99A0A1BAD316300EF8CAD /* Assets.xcassets */,
 				48A99A0C1BAD316300EF8CAD /* LaunchScreen.storyboard */,
 				48A99A0F1BAD316300EF8CAD /* Info.plist */,
+				4870C0C71BC7E5FE00EEDBF9 /* idaily-Bridging-Header.h */,
 			);
 			path = idaily;
 			sourceTree = "<group>";
@@ -446,6 +448,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "idaily/idaily-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$idaily-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -483,6 +487,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "idaily/idaily-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$idaily-Swift.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

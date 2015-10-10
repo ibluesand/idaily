@@ -9,31 +9,42 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import PKRevealController
+
 
 let launchImageUrl = "http://news-at.zhihu.com/api/4/start-image/720*1184"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,PKRevealing {
 
     var window: UIWindow?
-    var testNavigationController: UINavigationController?
+//    var testNavigationController: UINavigationController?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        testNavigationController = UINavigationController()
-    
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window!.backgroundColor = UIColor.blueColor()
-        self.window!.makeKeyAndVisible()
+//        loadStartImage(launchImageUrl, onSuccess: {(name,image) in
+//            LaunchImageViewController.addTransitionToViewController(testNavigationController!, modalTransitionStyle: UIModalTransitionStyle.CrossDissolve, withImageDate: image, withSourceName: name)
+//        });
+//        
+//        testNavigationController = UINavigationController()
         
-        let image = UIImage()
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        self.window!.backgroundColor = UIColor.whiteColor()
+//        self.window!.makeKeyAndVisible()
         
-        self.window!.rootViewController =
-        LaunchImageViewController.addTransitionToViewController(testNavigationController!, modalTransitionStyle: UIModalTransitionStyle.CrossDissolve, withImageDate: image, withSourceName: "hello")
-
-        loadStartImage(launchImageUrl);
+        let rightController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("rightViewController") as! ViewController
+        
+        //从主的StoryBoard中获取名为leftViewController的视图 也就是左视图
+        let leftController: UIViewController?=UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("leftViewController")
+        
+        
+        let revealController: PKRevealController = PKRevealController(frontViewController: rightController, leftViewController: leftController)
+        
+        revealController.delegate = self
+        
+        self.window?.rootViewController = revealController
         
 
         return true
@@ -62,14 +73,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func loadStartImage(url:String) {
+    func loadStartImage(url:String, onSuccess:(String,UIImage)->Void) {
         Alamofire.request(.GET, launchImageUrl).responseJSON() {
                 (request, response, result) in
                 var json  = JSON(result.value!)
-                let img = json["img"]
-                print(img)
+                let imgurl = json["img"].stringValue
+                let name = json["text"].stringValue
+                let imageData: NSData!  = NSData(contentsOfURL: NSURL(string: imgurl)!)
+                let image = UIImage(data: imageData)
+                onSuccess(name,image!)
+
         }
     }
+    
+    
 
 
 }
