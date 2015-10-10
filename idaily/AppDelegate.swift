@@ -24,28 +24,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,PKRevealing {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        loadStartImage(launchImageUrl, onSuccess: {(name,image) in
-//            LaunchImageViewController.addTransitionToViewController(testNavigationController!, modalTransitionStyle: UIModalTransitionStyle.CrossDissolve, withImageDate: image, withSourceName: name)
-//        });
-//        
-//        testNavigationController = UINavigationController()
-        
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        self.window!.backgroundColor = UIColor.whiteColor()
-//        self.window!.makeKeyAndVisible()
-        
         let rightController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("rightViewController") as! ViewController
         
         //从主的StoryBoard中获取名为leftViewController的视图 也就是左视图
         let leftController: UIViewController?=UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("leftViewController")
         
         
+        let navController = self.window?.rootViewController as? UINavigationController
         let revealController: PKRevealController = PKRevealController(frontViewController: rightController, leftViewController: leftController)
         
-        revealController.delegate = self
+        navController?.pushViewController(revealController, animated: false)
         
-        self.window?.rootViewController = revealController
-        
+        loadStartImage(launchImageUrl, onSuccess: {(name,image) in
+            self.window?.rootViewController =  LaunchImageViewController.addTransitionToViewController(navController!, modalTransitionStyle: UIModalTransitionStyle.CrossDissolve, withImageDate: image, withSourceName: name)
+        })
+
 
         return true
     }
