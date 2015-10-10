@@ -4,40 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="X6v-QL-9io">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="H3D-Qu-gIJ"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="X6v-QL-9io" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="216" id="Woc-SD-XxW"/>
-                            <constraint firstItem="X6v-QL-9io" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a3a-0m-5Tb"/>
-                            <constraint firstItem="X6v-QL-9io" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wPw-sv-wAD"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="XTc-VJ-kNx"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1066" y="208"/>
-        </scene>
         <!--Left View Controller-->
         <scene sceneID="HiJ-u9-Qx5">
             <objects>
@@ -62,7 +28,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyw-GG-sHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="1121"/>
+            <point key="canvasLocation" x="188" y="277"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lS5-N9-cFy">
@@ -81,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cb3-4A-NEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="1821"/>
+            <point key="canvasLocation" x="994" y="277"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UTy-G7-82e">
@@ -94,16 +60,10 @@
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iEF-RQ-zoY"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPJ-6x-vr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="-484"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="avatar" width="480" height="480"/>
-    </resources>
 </document>

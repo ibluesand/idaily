@@ -15,22 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yqk-GQ-Cet">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Zor-xh-0ll"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yqk-GQ-Cet" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="216" id="MO0-bB-TkV"/>
-                            <constraint firstItem="yqk-GQ-Cet" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QG4-7L-xYd"/>
-                            <constraint firstItem="yqk-GQ-Cet" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vsw-2P-fUp"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,PKRevealing {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         let rightController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("rightViewController") as! ViewController
         
         //从主的StoryBoard中获取名为leftViewController的视图 也就是左视图
